@@ -39,7 +39,8 @@ public class Utilisateur extends Personne{
 		
 	}
 	
-	public void addEmpruntEnCours(){
+	public void addEmpruntEnCours(EmpruntEnCours ep){
+		this.EmpruntEnCours.add(ep);
 		
 	}
 	

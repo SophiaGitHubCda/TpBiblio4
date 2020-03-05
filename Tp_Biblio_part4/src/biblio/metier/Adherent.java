@@ -28,10 +28,10 @@ int nbRetards=0;
 return nbRetards;
 }
 
-public int isConditionsPretAcceptees() {
-int isConditionPretAcceptees=0;
-return isConditionPretAcceptees;
+public Boolean isConditionsPretAcceptees() {
+	return true;
 }
+
 
 //guetteurs setteurs
 	public String getTelephone() {
