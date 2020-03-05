@@ -1,5 +1,10 @@
 package biblio.metier;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Adherent extends Utilisateur{
 	
 	private String telephone;
@@ -25,11 +30,48 @@ public class Adherent extends Utilisateur{
 	
 public int getNbRetards() {
 int nbRetards=0;
+
+for (int i = 0; i < this.getNbEmpruntsEncours(); i++) {
+	
+	//Conversion LocalDate en Date
+	LocalDate localdate = this.getEmpruntEnCours().get(i).getDateEmprunt();
+	Date dateemprunt = Date.from(localdate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+	
+	//Test de retard sur l'emprunt
+	if (this.isPretEnRetard(dateemprunt, new Date(), this.dureeMaxPrets)) {
+		nbRetards++;
+	}	
+}
 return nbRetards;
 }
 
+
+public boolean isPretEnRetard(Date dateEmpruntEffective, Date maintenant, int dureeMaxPret) {
+	Calendar calDateMin = Calendar.getInstance();
+	calDateMin.setTime(maintenant);
+	calDateMin.add(Calendar.DATE, -dureeMaxPret);
+
+	Calendar calDateEmprunt = Calendar.getInstance();
+	calDateEmprunt.setTime(dateEmpruntEffective);
+
+	return calDateEmprunt.before(calDateMin);
+}
+
+
+
 public Boolean isConditionsPretAcceptees() {
-	return true;
+	
+	boolean reponse = true;
+	
+	if (this.getNbRetards() > 0) {
+		reponse = false;
+	}
+	
+	if (this.getNbEmpruntsEncours() >= this.getNbMaxPrets()) {
+		reponse = false;
+	}
+	
+	return reponse;
 }
 
 
@@ -61,6 +103,30 @@ public void setDureeMaxPrets(int dureeMaxPrets) {
 
 
 
+
+	@Override
+public String toString() {
+	return "Adherent [telephone=" + telephone + ", nbMaxPrets=" + nbMaxPrets + ", dureeMaxPrets=" + dureeMaxPrets + "]";
+}
+	
+	
+	
+	
+	
+	
+
+	@Override
+	public void addEmpruntEnCours(EmpruntEnCours ep) throws BiblioException {
+		try {
+			if (this.isConditionsPretAcceptees()) {
+				super.addEmpruntEnCours(ep);
+			} else {
+				throw new BiblioException();
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 
 	public static void main(String[] args) {
 		

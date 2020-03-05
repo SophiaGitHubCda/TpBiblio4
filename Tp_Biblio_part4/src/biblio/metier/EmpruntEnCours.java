@@ -54,12 +54,21 @@ public class EmpruntEnCours {
 	public LocalDate getDateEmprunt() {
 		return dateEmprunt;
 	}
+	
+	
+	
 
 
 
 
 
 
+
+	@Override
+	public String toString() {
+		return "EmpruntEnCours [dateEmprunt=" + dateEmprunt + ", idUtilisateur=" + idUtilisateur + ", exemp=" + exemp
+				+ "]";
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

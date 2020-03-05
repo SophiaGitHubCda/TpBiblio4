@@ -39,7 +39,7 @@ public class Utilisateur extends Personne{
 		
 	}
 	
-	public void addEmpruntEnCours(EmpruntEnCours ep){
+	public void addEmpruntEnCours(EmpruntEnCours ep) throws BiblioException{
 		this.EmpruntEnCours.add(ep);
 		
 	}
