@@ -39,6 +39,12 @@ public class Utilisateur extends Personne{
 		
 	}
 	
+	@Override
+	public String toString() {
+		return "Utilisateur [idUtilisateur=" + idUtilisateur + ", pwd=" + pwd + ", pseudonyme=" + pseudonyme
+				+ ", EmpruntEnCours=" + EmpruntEnCours + "]";
+	}
+
 	public void addEmpruntEnCours(EmpruntEnCours ep) throws BiblioException{
 		this.EmpruntEnCours.add(ep);
 		

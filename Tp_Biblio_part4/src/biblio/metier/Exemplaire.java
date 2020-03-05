@@ -28,6 +28,17 @@ public class Exemplaire {
 
 
 
+	@Override
+	public String toString() {
+		return "Exemplaire [idExemplaire=" + idExemplaire + ", dateAchat=" + dateAchat + ", status=" + status
+				+ ", isbn=" + isbn + "]";
+	}
+
+
+
+
+
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
