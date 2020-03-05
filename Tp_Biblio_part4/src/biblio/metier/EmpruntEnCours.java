@@ -42,6 +42,70 @@ public class EmpruntEnCours {
 	}
 
 
+	public int getIdUtilisateur() {
+		return idUtilisateur;
+	}
+
+	public void setIdUtilisateur(int idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
+	}
+
+	public int getIdExemplaire() {
+		return idExemplaire;
+	}
+
+	public void setIdExemplaire(int idExemplaire) {
+		this.idExemplaire = idExemplaire;
+	}
+
+	public int getExemp() {
+		return exemp;
+	}
+
+	public void setExemp(int exemp) {
+		this.exemp = exemp;
+	}
+
+	public int getUt() {
+		return ut;
+	}
+
+	public void setUt(int ut) {
+		this.ut = ut;
+	}
+
+	public LocalDate getD() {
+		return d;
+	}
+
+	public void setD(LocalDate d) {
+		this.d = d;
+	}
+
+	public int getEx() {
+		return ex;
+	}
+
+	public void setEx(int ex) {
+		this.ex = ex;
+	}
+
+	public int getU() {
+		return u;
+	}
+
+	public void setU(int u) {
+		this.u = u;
+	}
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
 	public EmpruntEnCours(LocalDate dateEmprunt) {
 		super();
 		this.dateEmprunt = dateEmprunt;

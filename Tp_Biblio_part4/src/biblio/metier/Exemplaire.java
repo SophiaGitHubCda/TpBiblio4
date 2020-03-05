@@ -54,4 +54,78 @@ public class Exemplaire {
 		return 0;
 	}
 
+
+
+
+
+
+	public void setEmpruntEnCours(EmpruntEnCours emp10) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+
+	public void setStatus(EnumStatusExemplaire prete) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+
+	public LocalDate getDateAchat() {
+		return dateAchat;
+	}
+
+
+
+
+
+
+	public void setDateAchat(LocalDate dateAchat) {
+		this.dateAchat = dateAchat;
+	}
+
+
+
+
+
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+
+
+
+
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+
+
+
+
+
+	public EnumStatusExemplaire getStatus() {
+		return status;
+	}
+
+
+
+
+
+
+	public void setIdExemplaire(int idExemplaire) {
+		this.idExemplaire = idExemplaire;
+	}
+
 }
