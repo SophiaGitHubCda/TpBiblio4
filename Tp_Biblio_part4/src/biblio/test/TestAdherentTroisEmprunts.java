@@ -58,11 +58,43 @@ public class TestAdherentTroisEmprunts {
 			
 			
 		//Creation d'un emprunt en cours pour l'adh�rent	
-			EmpruntEnCours emp10 = new EmpruntEnCours(1, 11, LocalDate.of(2020, 02, 1));
+			EmpruntEnCours emp10 = new EmpruntEnCours(1, 1, LocalDate.of(2020, 02, 1));
 			ad.addEmpruntEnCours(emp10);
 			ex.setEmpruntEnCours(emp10);
 			ex.setStatus(EnumStatusExemplaire.prete);
 			System.out.println(emp10);
+			
+			
+		//Creation 2  emprunt en cours pour l'adhérent
+			EmpruntEnCours emp11 = new EmpruntEnCours(2, 2, LocalDate.of(2020, 03, 15));
+			ad.addEmpruntEnCours(emp11);
+			ex.setEmpruntEnCours(emp11);
+			ex.setStatus(EnumStatusExemplaire.prete);
+			System.out.println(emp11);
+			
+			
+		//Creation 3  emprunt en cours pour l'adhérent
+			EmpruntEnCours emp12 = new EmpruntEnCours(3, 3, LocalDate.of(2020, 01, 18));
+			ad.addEmpruntEnCours(emp12);
+			ex.setEmpruntEnCours(emp12);
+			ex.setStatus(EnumStatusExemplaire.prete);
+			System.out.println(emp12);	
+			
+		//Creation 4  emprunt en cours pour l'adhérent
+			EmpruntEnCours emp13 = new EmpruntEnCours(4, 4, LocalDate.of(2020, 01, 19));
+			ad.addEmpruntEnCours(emp13);
+			ex.setEmpruntEnCours(emp13);
+			ex.setStatus(EnumStatusExemplaire.prete);
+			System.out.println(emp13);	
+			
+			
+			
+			
+			
+			
+			
+			
+			
 	}
 
 }
